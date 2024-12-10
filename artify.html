@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artify - Teen and Kids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav-items">
+                <li><img src="imagen.png" alt="Notifications" width="40" role="button" id="a"></li>
+                <li><img src="imagesearch.png" alt="Search" width="40" role="button" id="b"></li>
+                <li>
+                    <input type="text" placeholder="Search classes, digital products, teachers..." class="search-bar">
+                </li>
+                <li><h1 class="heading">Artify</h1></li>
+                <li>
+                    <!-- Toggle for Teen/Kids -->
+                    <label class="switch">
+                        <input type="checkbox" id="section-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Teen Section -->
+        <section id="teen-section" class="content active">
+            <h1>Welcome to the Teen Section</h1>
+            <p>Explore creative classes tailored for teens!</p>
+            <div class="categories">
+                <div class="category">
+                    <img src="" alt="Graphic Design" class="graphic">
+                    <h2>Graphic Design</h2>
+                </div>
+                <div class="category">
+                    <img src="" alt="Illustration" class="illustration">
+                    <h2>Illustration</h2>
+                </div>
+                <div class="category">
+                    <img src="Screenshot 2024-12-10 165319.png" alt="Animation" class="animation">
+                    <h2>Animation</h2>
+                </div>
+                <div class="category">
+                    <img src="photography.png" alt="photography" class="photography">
+                    <h2>Photography</h2>
+                    </div>
+                    <div class="category">
+                        <img src="FineArts.png" alt="FineArts" class="FineArts">
+                        <h2>Fine Arts</h2>
+                        </div>
+            </div>
+        </section>
+
+        <!-- Kids Section -->
+        <section id="kids-section" class="content">
+            <h1>Welcome to the Kids Section</h1>
+            <p>Fun and engaging activities for kids!</p>
+            <div class="categories">
+                <div class="category">
+                    <img src="crafts.png" alt="Crafts">
+                    <h2>Crafts</h2>
+                </div>
+                <div class="category">
+                    <img src="painting.png" alt="Painting">
+                    <h2>Painting</h2>
+                </div>
+                <div class="category">
+                    <img src="storytelling.png" alt="Storytelling">
+                    <h2>Storytelling</h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
