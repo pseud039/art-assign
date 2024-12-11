@@ -4,12 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-#a{
-    transform: rotate(-90deg);
-}
-#b{
-    transform: rotate(-45deg);
-}
+
 /* Header Navigation */
 .header {
     display: flex;
@@ -83,11 +78,80 @@ input:checked + .slider:before {
 }
 
 .categories {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
 }
 
+/* Carousel */
+.slide {
+    display: flex;
+    width: calc(100% * 3); /* Adjust according to the number of slides */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slide */
 .category {
-    text-align: center;
+    flex: 0 0 100%;
+    position: relative;
+}
+
+.category img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Caption */
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Navigation Buttons */
+#previous, #next {
+    font-size: 18px;
+    color: #26275a;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#previous {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+#previous:hover, #next:hover {
+    color: #1e0d0d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .categories {
+        max-width: 100%;
+    }
+    .category img {
+        height: 200px;
+    }
 }
