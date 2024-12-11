@@ -5,6 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artify - Teen and Kids</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header Navigation */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .nav-items {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 15px;
+        }
+
+        .search-bar {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* Categories Section */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        .category {
+            position: relative;
+            width: 20%;
+            cursor: pointer;
+        }
+
+        .category img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Toggle Switch
+        /* .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2d8cf0;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        } */ */
+       /* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border: 1px solid #adb5bd;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.27em;
+  bottom: 0.25em;
+  background-color: #adb5bd;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #007bff;
+  border: 1px solid #007bff;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #007bff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.4em);
+  background-color: #fff;
+}
+        /* Main Section Styling */
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -36,25 +209,25 @@
             <p>Explore creative classes tailored for teens!</p>
             <div class="categories">
                 <div class="category">
-                    <img src="" alt="Graphic Design" class="graphic">
-                    <h2>Graphic Design</h2>
+                    <img src="https://static.skillshare.com/assets/images/loh/category_carousel/320x400/fine_art.webp" alt="Fine Art">
+                    <div class="caption">Fine Art</div>
                 </div>
                 <div class="category">
-                    <img src="" alt="Illustration" class="illustration">
-                    <h2>Illustration</h2>
+                    <img src="https://static.skillshare.com/assets/images/loh/category_carousel/320x400/marketing.webp" alt="Marketing">
+                    <div class="caption">Marketing</div>
                 </div>
                 <div class="category">
-                    <img src="Screenshot 2024-12-10 165319.png" alt="Animation" class="animation">
-                    <h2>Animation</h2>
+                    <img src="https://static.skillshare.com/assets/images/loh/category_carousel/320x400/graphic_design.webp" alt="Graphic Design">
+                    <div class="caption">Graphic Design</div>
                 </div>
                 <div class="category">
-                    <img src="photography.png" alt="photography" class="photography">
-                    <h2>Photography</h2>
-                    </div>
-                    <div class="category">
-                        <img src="FineArts.png" alt="FineArts" class="FineArts">
-                        <h2>Fine Arts</h2>
-                        </div>
+                    <img src="https://static.skillshare.com/assets/images/loh/category_carousel/320x400/illustration.webp" alt="Illustration">
+                    <div class="caption">Illustration</div>
+                </div>
+                <div class="category">
+                    <img src="https://static.skillshare.com/assets/images/loh/category_carousel/320x400/animation.webp" alt="Animation">
+                    <div class="caption">Animation</div>
+                </div>
             </div>
         </section>
 
@@ -64,21 +237,35 @@
             <p>Fun and engaging activities for kids!</p>
             <div class="categories">
                 <div class="category">
-                    <img src="crafts.png" alt="Crafts">
-                    <h2>Crafts</h2>
+                    <img src="imagean.png" alt="Crafts">
+                    <div class="caption">Crafts</div>
                 </div>
                 <div class="category">
-                    <img src="painting.png" alt="Painting">
-                    <h2>Painting</h2>
+                    <img src="imagean.png" alt="Painting">
+                    <div class="caption">Painting</div>
                 </div>
                 <div class="category">
-                    <img src="storytelling.png" alt="Storytelling">
-                    <h2>Storytelling</h2>
+                    <img src="imagean.png" alt="Storytelling">
+                    <div class="caption">Storytelling</div>
                 </div>
             </div>
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        const toggle = document.getElementById('section-toggle');
+        const teenSection = document.getElementById('teen-section');
+        const kidsSection = document.getElementById('kids-section');
+
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                teenSection.classList.remove('active');
+                kidsSection.classList.add('active');
+            } else {
+                teenSection.classList.add('active');
+                kidsSection.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
