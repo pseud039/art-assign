@@ -1,34 +1,63 @@
-// Toggle Switch Functionality
-const toggleSwitch = document.getElementById('section-toggle');
-const teenSection = document.getElementById('teen-section');
-const kidsSection = document.getElementById('kids-section');
+'use strict';
 
-toggleSwitch.addEventListener('change', () => {
-    if (toggleSwitch.checked) {
-        teenSection.classList.remove('active');
-        kidsSection.classList.add('active');
-    } else {
-        teenSection.classList.add('active');
-        kidsSection.classList.remove('active');
+
+
+/**
+ * add event on element
+ */
+
+const addEventOnElem = function (elem, type, callback) {
+  if (elem.length > 1) {
+    for (let i = 0; i < elem.length; i++) {
+      elem[i].addEventListener(type, callback);
     }
-});
-const carousel = document.querySelector('.carousel');
-let index = 0;
-
-function nextSlide() {
-    index = (index + 1) % 3; // Assuming 3 slides
-    updateCarousel();
+  } else {
+    elem.addEventListener(type, callback);
+  }
 }
 
-function prevSlide() {
-    index = (index - 1 + 3) % 3; // Wrap around
-    updateCarousel();
+
+
+/**
+ * navbar toggle
+ */
+
+const navbar = document.querySelector("[data-navbar]");
+const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+const navLinks = document.querySelectorAll("[data-nav-link]");
+const overlay = document.querySelector("[data-overlay]");
+
+const toggleNavbar = function () {
+  navbar.classList.toggle("active");
+  overlay.classList.toggle("active");
 }
 
-function updateCarousel() {
-    carousel.style.transform = `translateX(-${index * 100}%)`;
+addEventOnElem(navTogglers, "click", toggleNavbar);
+
+const closeNavbar = function () {
+  navbar.classList.remove("active");
+  overlay.classList.remove("active");
 }
 
-// Optional: Add buttons for manual control
-document.querySelector('#next').addEventListener('click', nextSlide);
-document.querySelector('#prev').addEventListener('click', prevSlide);
+addEventOnElem(navLinks, "click", closeNavbar);
+
+
+
+/**
+ * header active when scroll down to 100px
+ */
+
+const header = document.querySelector("[data-header]");
+const backTopBtn = document.querySelector("[data-back-top-btn]");
+
+const activeElem = function () {
+  if (window.scrollY > 100) {
+    header.classList.add("active");
+    backTopBtn.classList.add("active");
+  } else {
+    header.classList.remove("active");
+    backTopBtn.classList.remove("active");
+  }
+}
+
+addEventOnElem(window, "scroll", activeElem);
